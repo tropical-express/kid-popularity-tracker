@@ -25,3 +25,89 @@ It fetches comments from a channel, counts mentions of specific kids’ names, a
 ```bash
 git clone https://github.com/tropical-express/kid-popularity-tracker.git
 cd kid-popularity-tracker
+```
+2. **Create virtual enviroment (recommended)**
+
+   ## Windows
+   ```
+   python -m venv venv venv\Scripts\activate
+   ```
+
+   ## Mac/Linux
+   ```
+   python -m venv venv source venv/bin/activate
+   ```
+
+   3. **Install dependencies**
+      ```
+      pip install -r requirements.txt
+      ```
+      ---
+      # Enviroment setup
+      Create a .env file based on .env.example
+
+      Example:
+      ```
+      YOUTUBE_API_KEY=YOUR_API_KEY_HERE
+      CHANNEL_ID=YOUR_CHANNEL_ID_HERE
+      ```
+   You can get an API key from Google Cloud Console.
+
+   ---
+   #Running the Backend 
+    the backend fetches comments and calculates popularity.
+   ```
+   python kid_backend_engine.py
+   ```
+
+## This will generate:
+kid_current.csv
+kid_current.json
+kid_history.csv
+
+---
+
+# Running the Dashboard
+ Start the dashboard:
+ ```
+streamlit run kid_dashboard.py
+```
+Then open the local URL shown in the terminal.
+
+The dashboard displays:
+-Current Popularity Leaderboard
+-Pie Chart Distribution
+-Historical Display Trends
+---
+# Data Files
+  Generated files (not included in git):
+  -kid_current.csv
+  -kid_current.json
+  -kid_history.csv
+  These are ignored in .gitignore.
+  ---
+  # Security Notes
+   This repository does not include API keys.
+
+   Enviroment Variables are stored in .env, which is excluded from version control.
+   ---
+   # Requirements
+   The project depends on:
+
+   -pandas
+   -streamlit
+   -plotly
+   -python-dotenv
+   -google-api-python-client
+   Install them using:
+   ```
+pip install -r requirements.txt
+```
+---
+# License
+MIT License
+---
+# Disclaimer
+
+This project uses the official Youtube Data API and analyzes publicly availible comments.
+It does not scrape private data or bypass API restrictions.
