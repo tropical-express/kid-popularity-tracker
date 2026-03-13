@@ -1,0 +1,12 @@
+# IDE settings
+.idea/
+
+# Data files
+*.csv
+*.json
+
+# Enviroment Variables
+.env
+
+# PowerShell Scripts
+*.ps1
